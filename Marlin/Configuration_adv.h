@@ -62,7 +62,7 @@
  * If you get false positives for "Thermal Runaway" increase THERMAL_PROTECTION_HYSTERESIS and/or THERMAL_PROTECTION_PERIOD
  */
 #if ENABLED(THERMAL_PROTECTION_HOTENDS)
-  #define THERMAL_PROTECTION_PERIOD 40        // Seconds
+  #define THERMAL_PROTECTION_PERIOD 180        // Seconds
   #define THERMAL_PROTECTION_HYSTERESIS 4     // Degrees Celsius
 
   /**
@@ -74,7 +74,7 @@
    * If you get false positives for "Heating failed" increase WATCH_TEMP_PERIOD and/or decrease WATCH_TEMP_INCREASE
    * WATCH_TEMP_INCREASE should not be below 2.
    */
-  #define WATCH_TEMP_PERIOD 20                // Seconds
+  #define WATCH_TEMP_PERIOD 80                // Seconds
   #define WATCH_TEMP_INCREASE 2               // Degrees Celsius
 #endif
 
@@ -350,7 +350,7 @@
 #define Y_HOME_BUMP_MM 5
 #define Z_HOME_BUMP_MM 2
 #define HOMING_BUMP_DIVISOR {2, 2, 4}  // Re-Bump Speed Divisor (Divides the Homing Feedrate)
-//#define QUICK_HOME  //if this is defined, if both x and y are to be homed, a diagonal move will be performed initially.
+#define QUICK_HOME  //if this is defined, if both x and y are to be homed, a diagonal move will be performed initially.
 
 // When G28 is called, this option will make Y home before X
 //#define HOME_Y_BEFORE_X
@@ -812,7 +812,7 @@
   #define PAUSE_PARK_Y_POS 3                  // Y position of hotend
   #define PAUSE_PARK_Z_ADD 10                 // Z addition of hotend (lift)
   #define PAUSE_PARK_XY_FEEDRATE 100          // X and Y axes feedrate in mm/s (also used for delta printers Z axis)
-  #define PAUSE_PARK_Z_FEEDRATE 5             // Z axis feedrate in mm/s (not used for delta printers)
+  #define PAUSE_PARK_Z_FEEDRATE 2             // Z axis feedrate in mm/s (not used for delta printers)
   #define PAUSE_PARK_RETRACT_FEEDRATE 60      // Initial retract feedrate in mm/s
   #define PAUSE_PARK_RETRACT_LENGTH 2         // Initial retract in mm
                                               // It is a short retract used immediately after print interrupt before move to filament exchange position
