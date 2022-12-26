@@ -543,7 +543,7 @@
 #define TEMP_SENSOR_5 0
 #define TEMP_SENSOR_6 0
 #define TEMP_SENSOR_7 0
-#define TEMP_SENSOR_BED 0
+#define TEMP_SENSOR_BED 60
 #define TEMP_SENSOR_PROBE 0
 #define TEMP_SENSOR_CHAMBER 0
 #define TEMP_SENSOR_COOLER 0
@@ -666,9 +666,10 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-    #define DEFAULT_Kp  22.20
-    #define DEFAULT_Ki   1.08
-    #define DEFAULT_Kd 114.00
+    //Values from PID autotune right from the printer after executing M303 E0 C15 S210, while manually pushing a bit of PLA
+    #define DEFAULT_Kp 205.64
+    #define DEFAULT_Ki 39.84
+    #define DEFAULT_Kd 265.32
   #endif
 #endif
 
@@ -1600,7 +1601,7 @@
 #define PREHEAT_BEFORE_PROBING
 #if ENABLED(PREHEAT_BEFORE_PROBING)
   #define PROBING_NOZZLE_TEMP 210   // (°C) Only applies to E0 at this time
-  #define PROBING_BED_TEMP     0
+  #define PROBING_BED_TEMP     60
 #endif
 
 // For Inverting Stepper Enable Pins (Active Low) use 0, Non Inverting (Active High) use 1
@@ -1693,16 +1694,16 @@
 // @section geometry
 
 // The size of the printable area
-#define X_BED_SIZE 203
-#define Y_BED_SIZE 203
+#define X_BED_SIZE 200
+#define Y_BED_SIZE 200
 
 // Travel limits (linear=mm, rotational=°) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
-#define Y_MIN_POS-5
+#define Y_MIN_POS 0
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
-#define Y_MAX_POS Y_BED_SIZE-5
-#define Z_MAX_POS 190
+#define Y_MAX_POS Y_BED_SIZE
+#define Z_MAX_POS 200
 //#define I_MIN_POS 0
 //#define I_MAX_POS 50
 //#define J_MIN_POS 0
@@ -1887,10 +1888,10 @@
 /**
  * Auto-leveling needs preheating
  */
-//#define PREHEAT_BEFORE_LEVELING
+//#define PREHEAT_BEFORE_LEVELING //Note: Since Preheat before probing is already enabled, do not turn that on. 
 #if ENABLED(PREHEAT_BEFORE_LEVELING)
   #define LEVELING_NOZZLE_TEMP 210   // (°C) Only applies to E0 at this time
-  #define LEVELING_BED_TEMP     0
+  #define LEVELING_BED_TEMP     60
 #endif
 
 /**
