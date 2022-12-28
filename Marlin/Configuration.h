@@ -620,7 +620,7 @@
 // Above this temperature the heater will be switched off.
 // This can protect components from overheating, but NOT from shorts and failures.
 // (Use MINTEMP for thermistor short/failure protection.)
-#define HEATER_0_MAXTEMP 275
+#define HEATER_0_MAXTEMP 260 // Disocvered the E3Dv6 clone hot-end has PTFE to insulate the thermistor. Lowering the max temp permitted by the firmware.
 #define HEATER_1_MAXTEMP 275
 #define HEATER_2_MAXTEMP 275
 #define HEATER_3_MAXTEMP 275
@@ -628,7 +628,7 @@
 #define HEATER_5_MAXTEMP 275
 #define HEATER_6_MAXTEMP 275
 #define HEATER_7_MAXTEMP 275
-#define BED_MAXTEMP      150
+#define BED_MAXTEMP      120 // BuildTak flexplate sysetm rated for 120C max.
 #define CHAMBER_MAXTEMP  60
 
 /**
