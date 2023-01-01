@@ -668,10 +668,9 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-    //Values from PID autotune right from the printer after executing M303 E0 C15 S210, while manually pushing a bit of PLA
-    #define DEFAULT_Kp 205.64
-    #define DEFAULT_Ki 39.84
-    #define DEFAULT_Kd 265.32
+    #define DEFAULT_Kp 61.99
+    #define DEFAULT_Ki 12.20
+    #define DEFAULT_Kd 78.71
   #endif
 #endif
 
@@ -1170,14 +1169,14 @@
  * Override with M92
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 2560, 98 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 98 }
 
 /**
  * Default Max Feed Rate (linear=mm/s, rotational=°/s)
  * Override with M203
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 500, 500, 4, 25 }
+#define DEFAULT_MAX_FEEDRATE          { 500, 500, 8, 25 }
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
@@ -1485,7 +1484,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { 0, 21, -2.08 }
+#define NOZZLE_TO_PROBE_OFFSET { 0, 21, 0 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
