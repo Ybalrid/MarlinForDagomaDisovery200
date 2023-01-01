@@ -628,7 +628,7 @@
 #define HEATER_5_MAXTEMP 275
 #define HEATER_6_MAXTEMP 275
 #define HEATER_7_MAXTEMP 275
-#define BED_MAXTEMP      120 // BuildTak flexplate sysetm rated for 120C max.
+#define BED_MAXTEMP      120 // BuildTak flexplate system rated for 120C max.
 #define CHAMBER_MAXTEMP  60
 
 /**
