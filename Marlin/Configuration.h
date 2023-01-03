@@ -668,9 +668,10 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-    #define DEFAULT_Kp 61.99
-    #define DEFAULT_Ki 12.20
-    #define DEFAULT_Kd 78.71
+    // Values for the E3D Revo, obtained for 210C at 15 iteration by Marlin
+    #define DEFAULT_Kp 21.94
+    #define DEFAULT_Ki 4.32
+    #define DEFAULT_Kd 27.86
   #endif
 #endif
 
