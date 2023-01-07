@@ -1603,7 +1603,7 @@
 #define PREHEAT_BEFORE_PROBING
 #if ENABLED(PREHEAT_BEFORE_PROBING)
   #define PROBING_NOZZLE_TEMP 210   // (°C) Only applies to E0 at this time
-  #define PROBING_BED_TEMP     0
+  #define PROBING_BED_TEMP     60
 #endif
 
 // For Inverting Stepper Enable Pins (Active Low) use 0, Non Inverting (Active High) use 1
@@ -1893,7 +1893,7 @@
 //#define PREHEAT_BEFORE_LEVELING //Note: Since Preheat before probing is already enabled, do not turn that on. 
 #if ENABLED(PREHEAT_BEFORE_LEVELING)
   #define LEVELING_NOZZLE_TEMP 210   // (°C) Only applies to E0 at this time
-  #define LEVELING_BED_TEMP     0
+  #define LEVELING_BED_TEMP     60
 #endif
 
 /**
